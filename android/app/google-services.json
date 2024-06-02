@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "318444538082",
+    "project_id": "school-60047",
+    "storage_bucket": "school-60047.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318444538082:android:ca3bb32d27168b0f09b6bb",
+        "android_client_info": {
+          "package_name": "com.example.school"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHLbwHu1seOWB7GO4zKX9TGT9Wo-LSEyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318444538082:android:c6a5efde637872e709b6bb",
+        "android_client_info": {
+          "package_name": "com.example.weather"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHLbwHu1seOWB7GO4zKX9TGT9Wo-LSEyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
