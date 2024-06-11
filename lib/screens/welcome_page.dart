@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school/screens/student_page.dart';
 import 'package:school/widget/custom_card.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -11,9 +12,6 @@ class WelcomePage extends StatelessWidget {
         body: Container(
       height: double.infinity,
       width: double.infinity,
-      decoration: BoxDecoration(
-          gradient:
-              LinearGradient(colors: [Color(0xff004845), Color(0xff999999)])),
       child: Padding(
         padding: const EdgeInsets.only(top: 50),
         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -36,31 +34,44 @@ class WelcomePage extends StatelessWidget {
                 Column(
                   children: [
                     CustomCard(
-                        imageIcon: 'assets/images/parent.png',
-                        scale: 1,
-                        club: ' Parent'),
+                      imageIcon: 'assets/images/parent.png',
+                      scale: 1,
+                      club: ' Parent',
+                      onTap: () {},
+                    ),
                     SizedBox(
                       height: 40,
                     ),
                     CustomCard(
-                        imageIcon: 'assets/images/students.png',
-                        scale: 1,
-                        club: 'Student'),
+                      imageIcon: 'assets/images/students.png',
+                      scale: 1,
+                      club: 'Student',
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => StudentPage()));
+                      },
+                    ),
                   ],
                 ),
                 Column(
                   children: [
                     CustomCard(
-                        imageIcon: 'assets/images/admin.png',
-                        scale: 1,
-                        club: ' Admin'),
+                      imageIcon: 'assets/images/admin.png',
+                      scale: 1,
+                      club: ' Admin',
+                      onTap: () {},
+                    ),
                     SizedBox(
                       height: 40,
                     ),
                     CustomCard(
-                        imageIcon: 'assets/images/staff.png',
-                        scale: 1,
-                        club: '  Staff'),
+                      imageIcon: 'assets/images/staff.png',
+                      scale: 1,
+                      club: '  Staff',
+                      onTap: () {},
+                    ),
                   ],
                 ),
 
