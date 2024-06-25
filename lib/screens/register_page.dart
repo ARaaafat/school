@@ -91,7 +91,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       controller: _passwordController,
                       validator: (data) {
                         if (data!.isEmpty) {
-                          return ' password is required';
+                          return ' password required';
                         }
                       },
                       onChanged: (data) {
