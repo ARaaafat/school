@@ -3,6 +3,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:school/screens/login_page.dart';
 import 'package:school/screens/login_page.dart';
 import 'package:school/screens/my_profile_page.dart';
+import 'package:school/screens/on_boarding_page.dart';
 import 'package:school/screens/student_page.dart';
 import 'package:school/screens/welcome_page.dart';
 import 'package:lottie/lottie.dart';
@@ -19,7 +20,7 @@ class SplashScreen extends StatelessWidget {
           'assets/animations/Animation - 1716150373147.json',
         ),
       ),
-      nextScreen: WelcomePage(),
+      nextScreen: OnboardingScreen(),
       duration: 2000,
       splashIconSize: 1200000,
     );

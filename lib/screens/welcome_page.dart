@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school/screens/register_page.dart';
 import 'package:school/screens/student_page.dart';
 import 'package:school/widget/custom_card.dart';
 
@@ -50,7 +51,7 @@ class WelcomePage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => StudentPage()));
+                                builder: (context) => RegisterPage()));
                       },
                     ),
                   ],

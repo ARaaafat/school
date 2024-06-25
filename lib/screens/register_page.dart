@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:school/screens/login_page.dart';
 import 'package:school/widget/custom_button.dart';
@@ -24,9 +23,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
   bool isLoading = false;
 
-  final userNameController = TextEditingController();
+  final _userNameController = TextEditingController();
 
-  final passwordController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -55,33 +55,95 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ],
                   ),
-                  CustomTextFormField(
-                    fieldName: 'Username',
-                    inputType: TextInputType.emailAddress,
-                    hintText: 'Enter your username',
-                    obscureText: false,
-                    controller: userNameController,
-                    onChanged: (data) {
-                      email = data;
-                    },
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        right: 20, top: 10, bottom: 10, left: 20),
+                    child: TextFormField(
+                      controller: _userNameController,
+                      validator: (data) {
+                        if (data!.isEmpty) {
+                          return ' Username is required';
+                        }
+                      },
+                      onChanged: (data) {
+                        email = data;
+                      },
+                      obscureText: false,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        hintStyle: TextStyle(color: Colors.grey.shade400),
+                        hintText: 'Enter Username',
+                        label: Text('Username'),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(),
+                            borderRadius: BorderRadius.circular(8)),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
                   ),
-                  CustomTextFormField(
-                    onChanged: (data) {
-                      password = data;
-                    },
-                    fieldName: 'Password',
-                    inputType: TextInputType.text,
-                    hintText: 'Enter yor password',
-                    obscureText: true,
-                    controller: passwordController,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        right: 20, top: 10, bottom: 10, left: 20),
+                    child: TextFormField(
+                      controller: _passwordController,
+                      validator: (data) {
+                        if (data!.isEmpty) {
+                          return ' password is required';
+                        }
+                      },
+                      onChanged: (data) {
+                        password = data;
+                      },
+                      obscureText: true,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        hintStyle: TextStyle(color: Colors.grey.shade400),
+                        hintText: 'Enter password',
+                        label: Text('password'),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(),
+                            borderRadius: BorderRadius.circular(8)),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
                   ),
-                  CustomTextFormField(
-                    onChanged: (data) {},
-                    fieldName: 'Verifying Password',
-                    inputType: TextInputType.text,
-                    hintText: 'Enter yor verified password',
-                    obscureText: true,
-                    controller: passwordController,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        right: 20, top: 10, bottom: 10, left: 20),
+                    child: TextFormField(
+                      controller: _confirmPasswordController,
+                      validator: (data) {
+                        if (data!.isEmpty) {
+                          return ' confirm password is required';
+                        }
+                        if (data != _passwordController.text) {
+                          return 'Passwords do not match';
+                        }
+                      },
+                      onChanged: (data) {
+                        email = data;
+                      },
+                      obscureText: true,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        hintStyle: TextStyle(color: Colors.grey.shade400),
+                        hintText: 'Enter confirm password',
+                        label: Text('Confirm password'),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(),
+                            borderRadius: BorderRadius.circular(8)),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
