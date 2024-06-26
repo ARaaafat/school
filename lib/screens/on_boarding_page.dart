@@ -33,13 +33,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
               buildPage(
                 color: Color.fromARGB(77, 150, 182, 145),
-                image: 'assets/images/google.png',
+                image: 'assets/icons/transfer.png',
                 title: 'Easy Transfer',
-                subtitle: '',
+                subtitle: 'Send pocket money for your childern',
               ),
               buildPage(
                 color: Color.fromARGB(77, 150, 182, 145),
-                image: 'assets/images/parent.png',
+                image: 'assets/icons/pay.png',
                 title: 'Easy Pay',
                 subtitle: 'Get started with using the app!',
               ),
@@ -103,7 +103,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(image),
+          Container(width: 250, height: 300, child: Image.asset(image)),
           SizedBox(height: 20),
           Text(
             title,

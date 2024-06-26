@@ -66,6 +66,12 @@ class loginPage extends StatelessWidget {
                           isLoading = true;
                           try {
                             await signIn();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => WelcomePage(),
+                              ),
+                            );
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'user-not-found') {
                               showSnackBar(context, 'user not found');
